@@ -1,0 +1,152 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <string>
+using namespace std;
+int main()
+{
+//    //zadanie 1
+//    int arr[10]={};
+//    srand(time(nullptr));
+//    for (int i=0; i<10; i++){
+//        arr[i]=rand()%21-10;
+//        cout << arr[i]<<endl;}
+//    cout << pow(arr[0],3)+pow(arr[1],3)+pow(arr[6],3)<<endl;
+//
+////zadanie 2
+//    int n = 0;
+//    while (n < 10)
+//    {
+//        cout << "vedite dlinu > 10" << endl;
+//        cin >> n;
+//    }
+//    int *arr2 = new int[n];
+//    cout << " vedite chisla ";
+//    for (int i = 0; i < n; ++i)
+//    {
+//        cin >> arr2[i];
+//    }
+//    for (int i = 0; i < n; ++i)
+//    {
+//        cout << arr2[i] << endl;
+//    }
+//    for (int i = 0; i < n; ++i)
+//    {
+//        if (arr2[i] % 2)
+//        {
+//            arr2[i] *= 3;
+//        }
+//    }
+//    for (int i = 0; i < n; ++i)
+//    {
+//        cout << arr2[i] << endl;
+//    }
+//    int k1, k2;
+//    int summa = 0;
+//    cout << "k1" << endl;
+//    cin >> k1;
+//    cout << "k2" << endl;
+//    cin >> k2;
+//    for (int i = k1; i <= k2; ++i)
+//    {
+//        summa += arr2[i];
+//    }
+//    cout << "summa" << summa << endl;
+//    delete[] arr2;
+////zadanie3
+//    int length;
+//    int a=0;
+//    cout << "vvedite dlinu massiva bolshe 4" << endl;
+//    cin>>length;
+//    while (length<=4)
+//    {
+//        cout << "vvedite drugoe shislo" << endl;
+//        cin>>length;
+//    }
+//    vector<int> vec1;
+//    for (int i = 0; i < length; ++i)
+//    {
+//        cout<< "vvedite element massiva :";
+//        cin >> a;
+//        vec1.push_back(a);
+//    }
+//    for (int i : vec1)
+//    {cout << i << endl;}
+//    int num=0;
+//    cout<<"vvedite nomer varianta :"<< endl;
+//    cin>>num;
+//    vec1.push_back(num);
+//    int sum=0;
+//    for (int i : vec1){
+//        sum+=i;}
+//    cout << "summa ravna :"<<sum<<endl;
+//    for (int i=0;i<vec1.size();++i)
+//    { if (vec1[i]<0)
+//        {
+//            vec1.erase(vec1.begin()+i);
+//            break;
+//        }
+//    }
+//    for (int i : vec1)
+//    {cout << i << endl;}
+//zadanie 4
+    string str;
+    cin.ignore(10,'\n');
+    cout << "vvedite predlozheni " << endl;
+    getline(cin, str);
+    cout << str << endl;
+    double bukv = 0;
+    cout << "vvedite bukvu" << endl;
+    char bukva;
+    double q = 0;
+    cin >> bukva;
+    for (char i : str)
+    {
+        if (((i >= 65) && (i <= 90)) || ((i >= 97) && (i <= 122)))
+            ++bukv;
+        if (i==bukva){
+            q++;
+        }
+    }
+    cout << "dolya bukvi :"<<bukva<<" " << q / str.length() << " "
+         << "dlina stroki :" << str.length() << endl;
+    cout << "vvedite l1 i l2" << endl;// цифры
+    int l1, l2;
+    cin >> l1;
+    cin >> l2;
+    cout << str.substr(l1, l2 - l1+1) << endl;
+    cout << "vvedite L1 i L2" << endl; // буквы
+    char L1,L2;
+    cin>>L1;
+    cin>>L2;
+    int first=0,last=0;
+    while (str.find(L1,first)!=std::string::npos) {
+        first=str.find(L1,first);
+        last=str.find(L2,last);
+        cout << str.substr(first, last - first + 1) << endl;
+        first++;
+        last++;
+
+    }
+
+
+
+
+
+
+
+    string str0 = ("Can you can a can as a canner can can a can?");
+    string str1;
+    cout << "vvedite slovo" << endl;
+    cin.ignore(10, '\n');
+    getline(cin, str1);
+    str0.replace(str0.find("can?"), 3, str1);
+    while (str0.find("can ") != -1)
+    {
+        str0.replace(str0.find("can "), 3, str1);
+    }
+    cout << str0 << endl;
+    return 0;
+}
